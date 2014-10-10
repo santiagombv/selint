@@ -1,9 +1,10 @@
 Package: selint
 Type: Package
-Title: What the package does (short line)
+Title: Integration and modularity psudovalues
 Version: 1.0
-Date: 2014-10-09
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Date: 2014-09-11
+Author: Santiago Benitez-Vieyra
+Maintainer: Santiago Benitez-Vieyra <santiagombv@gmail.com>
+Description: selint estimates phenotypic integration indices and their
+    jackknnife pseudovalues, allowing the estimation of selection coefficients.
+License: GPL-2
