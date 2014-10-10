@@ -7,7 +7,7 @@ An R package to estimate the phenotypic integration index, the RV coeffcient of 
 
 * install.packages('devtools')
 * library(devtools)
-* install_github('selint', username = 'santiagombv')
+* install_github('santiagombv/selint')
 * library(selint)
 
 ##References
