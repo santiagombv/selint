@@ -1,4 +1,4 @@
-#' Wagner-Cheverud morphological integration index
+#' Wagner-Cheverud phenotypic integration index
 #' 
 #' intWC estimates the relative variance of the eigenvalues of a correlation 
 #' matrix, corrected by sample size.
@@ -20,7 +20,7 @@
 #' variables, i.e. (N-1)/M where N is the number of traits and M is 
 #' the sample size.
 #' 
-#' @return the Wagner-Cheverud morphological integration index (INT). 
+#' @return the Wagner-Cheverud phenotypic integration index (INT). 
 #'  
 #' @references
 #' Cheverud, J.M., Wagner, G.P., and Dow, M.M. 1989. Methods for 
