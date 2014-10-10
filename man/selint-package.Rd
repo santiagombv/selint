@@ -3,12 +3,10 @@
 \alias{selint}
 \docType{package}
 \title{
-What the package does (short line)
-~~ package title ~~
+Phenotypic integration in R 
 }
 \description{
-More about what it does (maybe more than one line)
-~~ A concise (1-5 lines) description of the package ~~
+A package to estimate the phenotypic integration index, the RV coeffcient of modularity and their jackknife pseudovalues. This allows testing biological hypotheses about the adaptive significance of different patterns of integration, using simple phenotypic selection approaches.
 }
 \details{
 \tabular{ll}{
@@ -16,26 +14,21 @@ Package: \tab selint\cr
 Type: \tab Package\cr
 Version: \tab 1.0\cr
 Date: \tab 2014-10-09\cr
-License: \tab What license is it under?\cr
+License: \tab GPL-2 \cr
 }
-~~ An overview of how to use the package, including the most important functions ~~
+
 }
 \author{
-Who wrote it
+Code contributed by: Santiago Benitez-Vieyra
 
-Maintainer: Who to complain to <yourfault@somewhere.net>
-~~ The author and/or maintainer of the package ~~
+Package maintained by: Santiago Benitez-Vieyra (santiagombv@gmail.com
+)
+
+Development version hosted on GitHub: https://github.com/santiagombv/selint.git
+
+Please file bug reports at: https://github.com/santiagombv/selint/issues
+
 }
 \references{
-~~ Literature or other references for background information ~~
-}
-~~ Optionally other standard keywords, one per line, from file KEYWORDS in the R ~~
-~~ documentation directory ~~
-\keyword{ package }
-\seealso{
-~~ Optional links to other man pages, e.g. ~~
-~~ \code{\link[<pkg>:<pkg>-package]{<pkg>}} ~~
-}
-\examples{
-~~ simple examples of the most important functions ~~
+Benitez-Vieyra S, Fornoni J, Dominguez CA (in prep.) Phenotypic selection on individual integration.
 }
