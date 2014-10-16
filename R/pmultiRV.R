@@ -1,4 +1,5 @@
 #' Pseudovalues of multi-set Escoufier's RV coefficient
+#' 
 #' pmultiRV estimates the individual jackknife pseudovalues of the multi-set RV coefficient
 #' between multiple sets of variables.
 #' 
