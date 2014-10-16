@@ -3,10 +3,10 @@
 \alias{pairRV}
 \title{Escoufier's RV coefficient}
 \usage{
-pairRV(mat, vars1, vars2)
+pairRV(data, vars1, vars2)
 }
 \arguments{
-\item{mat}{A variance-covariance matrix, as obtained using \code{cov}.}
+\item{data}{A data frame or matrix with two or more numeric variables.}
 
 \item{vars1}{Vector indicating the variables to be assigned to
 module 1.}

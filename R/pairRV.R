@@ -3,7 +3,7 @@
 #' pairRV estimates the strength of the association between two sets of 
 #' variables (modules) using the Escoufier's RV coefficient.
 #' 
-#' @param mat A variance-covariance matrix, as obtained using \code{cov}.
+#' @param data A data frame or matrix with two or more numeric variables.
 #' @param vars1 Vector indicating the variables to be assigned to 
 #' module 1.
 #' @param vars2 Vector indicating the variables to be assigned to 
@@ -42,7 +42,8 @@
 #'  
 #' @export
 #' 
-pairRV <-function(mat, vars1, vars2){
+pairRV <-function(data, vars1, vars2){
+  mat <- cov(data[, c(vars1, vars2)])
   S12 <- mat[vars1, vars2]
   S11 <- mat[vars1, vars1]
   S22 <- mat[vars2, vars2]
