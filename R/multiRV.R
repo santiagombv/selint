@@ -25,7 +25,7 @@
 #'
 #' @examples
 #' A <- matrix(rnorm(200), 20, 10)
-#' multiRV(cov(A), vars = list(c(1:3), c(4:5), c(6:10)))
+#' multiRV(A, vars = list(c(1:3), c(4:5), c(6:10)))
 #'  
 #' @export
 #' 

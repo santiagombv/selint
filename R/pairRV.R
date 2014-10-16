@@ -38,7 +38,7 @@
 #'
 #' @examples
 #' A <- matrix(rnorm(100), 20, 5)
-#' pairRV(cov(A), vars1 = c(1:3), vars2=c(4:5))
+#' pairRV(A, vars1 = c(1:3), vars2=c(4:5))
 #'  
 #' @export
 #' 
