@@ -3,12 +3,12 @@
 \alias{multiRV}
 \title{Multi-set Escoufier's RV coefficient}
 \usage{
-multiRV(mat, vars)
+multiRV(data, vars)
 }
 \arguments{
-\item{mat}{A variance-covariance matrix, as obtained using \code{cov}.}
-
 \item{vars}{A list of vectors indicating the variables to be assigned to each module.}
+
+\item{dat}{A data frame or matrix with two or more numeric variables.}
 }
 \value{
 The multi-set Escoufier's RV coefficient.

@@ -3,7 +3,7 @@
 #' multiRV estimates the strength of the association between multiple sets of 
 #' variables (modules) as the average of all pair-wise RV coefficients between sets.
 #' 
-#' @param mat A variance-covariance matrix, as obtained using \code{cov}.
+#' @param dat A data frame or matrix with two or more numeric variables.
 #' @param vars A list of vectors indicating the variables to be assigned to each module.
 #' 
 #' @details  This function follows the suggestion of Klingenberg (2009) to estimate
@@ -29,11 +29,12 @@
 #'  
 #' @export
 #' 
-multiRV <- function (mat, vars){
+multiRV <- function (data, vars){
+  mat <- cov(data[, unlist(vars)])
   K <- c(1:length(vars))
   set <- t(combn(K, 2))
   rvlist <- numeric(nrow(set))
-  for(i in 1:nrow(set)) rvlist[i] <- pairRV(mat, vars1= vars[[set[i, 1]]], vars2=vars[[set[i, 2]]])
+  for(i in 1:nrow(set)) rvlist[i] <- pairRV(data, vars1= vars[[set[i, 1]]], vars2=vars[[set[i, 2]]])
   res <- mean(rvlist)
   res
 }
