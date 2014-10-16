@@ -3,7 +3,7 @@
 \alias{pairRV}
 \title{Escoufier's RV coefficient}
 \usage{
-pairRV(data, vars1, vars2)
+pairRV(data, vars1, vars2, ...)
 }
 \arguments{
 \item{data}{A data frame or matrix with two or more numeric variables.}
@@ -13,6 +13,8 @@ module 1.}
 
 \item{vars2}{Vector indicating the variables to be assigned to
 module 2.}
+
+\item{...}{Additional arguments to be passed to function \code{cov}.}
 }
 \value{
 The Escoufier's RV coefficient.
@@ -39,7 +41,7 @@ and one, when there are no modular structure.
 }
 \examples{
 A <- matrix(rnorm(100), 20, 5)
-pairRV(cov(A), vars1 = c(1:3), vars2=c(4:5))
+pairRV(A, vars1 = c(1:3), vars2=c(4:5))
 }
 \references{
 Escoufier, Y. 1973. Le traitement des variables vectorielles. Biometrics 29:751-760.

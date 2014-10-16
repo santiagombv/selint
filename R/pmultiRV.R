@@ -4,9 +4,7 @@
 #' 
 #' @param data A data frame or matrix with two or more numeric variables
 #' @param vars A list of vectors indicating the variables to be assigned to each module.
-#' @param method To estimate the RV coefficient either using a variance-covariance matrix 
-#' (\code{cov}) or a correlation matrix (\code{cor}).   
-#' @param ... Additional arguments to be passed to functions \code{cov} or \code{cor}
+#' @param ... Additional arguments to be passed to function \code{cov}.
 #' 
 #' @details The multi-set RV coefficient (Klingenberg 2009) is first estimated using the
 #' complete sample of individuals, as the average among all pair-wise Escoufier's RV 
@@ -43,22 +41,15 @@
 #'  
 #' @examples
 #' A <- matrix(rnorm(200), 20, 10)
-#' pmultiRV(A, vars = list(c(1:3), c(4:5), c(6:10)), method = "cov")
+#' pmultiRV(A, vars = list(c(1:3), c(4:5), c(6:10)))
 #'  
 #' @export
 #' 
-pmultiRV <- function(data, vars, method=c("cov","cor"), ...){
-N <- nrow(data) 
-Lrv <- numeric(N)  
-for(i in 1:N) {
-  if(method == "cov") {mat<-cov(data[, unlist(vars)], ...) 
-                       Trv <- multiRV(mat = mat, vars = vars)
-                       Lrv[i] <- multiRV(mat = cov(data[-i, ], ...), vars = vars)
-  } else {
-    mat<-cor(data[, unlist(vars)], ...)
-    Trv <- multiRV(mat = mat, vars = vars)
-    Lrv[i] <- multiRV(mat = cor(data[-i, ], ...), vars = vars)}
-}
-Drv <- N*Trv - (N-1)*Lrv
-Drv  
+pmultiRV <- function(data, vars, ...){
+  N <- nrow(data) 
+  Trv <- multiRV(data = data, vars = vars, ...)
+  Lrv <- numeric(N)  
+  for(i in 1:N) Lrv[i] <- multiRV(data = data[-i, ], vars = vars, ...)
+  Drv <- N*Trv - (N-1)*Lrv
+  Drv  
 }

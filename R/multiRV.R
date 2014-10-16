@@ -3,8 +3,9 @@
 #' multiRV estimates the strength of the association between multiple sets of 
 #' variables (modules) as the average of all pair-wise RV coefficients between sets.
 #' 
-#' @param dat A data frame or matrix with two or more numeric variables.
+#' @param data A data frame or matrix with two or more numeric variables.
 #' @param vars A list of vectors indicating the variables to be assigned to each module.
+#' @param ... Additional arguments to be passed to function \code{cov}.
 #' 
 #' @details  This function follows the suggestion of Klingenberg (2009) to estimate
 #' the strength of association among multiple sets of variables (modules), as the average 
@@ -29,12 +30,17 @@
 #'  
 #' @export
 #' 
-multiRV <- function (data, vars){
-  mat <- cov(data[, unlist(vars)])
+multiRV <- function (data, vars, ...){
+  mat <- cov(data[, unlist(vars)], ...)
   K <- c(1:length(vars))
   set <- t(combn(K, 2))
-  rvlist <- numeric(nrow(set))
-  for(i in 1:nrow(set)) rvlist[i] <- pairRV(data, vars1= vars[[set[i, 1]]], vars2=vars[[set[i, 2]]])
-  res <- mean(rvlist)
+  rvs <- numeric(nrow(set))
+  for(i in 1:nrow(set)){
+    S12 <- mat[vars[[set[i, 1]]], vars[[set[i, 2]]]]
+    S11 <- mat[vars[[set[i, 1]]], vars[[set[i, 1]]]]
+    S22 <- mat[vars[[set[i, 2]]], vars[[set[i, 2]]]]
+    rvs[i] <-sum(S12^2)/sqrt(sum(S11^2)*sum(S22^2))
+  } 
+  res <- mean(rvs)
   res
 }

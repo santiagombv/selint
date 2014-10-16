@@ -3,12 +3,14 @@
 \alias{multiRV}
 \title{Multi-set Escoufier's RV coefficient}
 \usage{
-multiRV(data, vars)
+multiRV(data, vars, ...)
 }
 \arguments{
+\item{data}{A data frame or matrix with two or more numeric variables.}
+
 \item{vars}{A list of vectors indicating the variables to be assigned to each module.}
 
-\item{dat}{A data frame or matrix with two or more numeric variables.}
+\item{...}{Additional arguments to be passed to function \code{cov}.}
 }
 \value{
 The multi-set Escoufier's RV coefficient.
@@ -26,7 +28,7 @@ when there are no modular structure.
 }
 \examples{
 A <- matrix(rnorm(200), 20, 10)
-multiRV(cov(A), vars = list(c(1:3), c(4:5), c(6:10)))
+multiRV(A, vars = list(c(1:3), c(4:5), c(6:10)))
 }
 \author{
 Santiago Benitez-Vieyra

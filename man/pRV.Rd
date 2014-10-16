@@ -3,7 +3,7 @@
 \alias{pRV}
 \title{Pseudovalues of Escoufier's RV coefficient}
 \usage{
-pRV(data, vars1, vars2, method = c("cov", "cor"), ...)
+pRV(data, vars1, vars2, ...)
 }
 \arguments{
 \item{data}{A data frame or matrix with two or more numeric variables}
@@ -14,10 +14,7 @@ module 1.}
 \item{vars2}{Vector indicating the variables to be assigned to
 module 2.}
 
-\item{method}{To estimate the RV coefficient either using a variance-covariance matrix
-(\code{cov}) or a correlation matrix (\code{cor}).}
-
-\item{...}{Additional arguments to be passed to functions \code{cov} or \code{cor}}
+\item{...}{Additional arguments to be passed to function \code{cov}.}
 }
 \value{
 the vector of individual jackknife pseudovalues of the RV coeffcient.
@@ -42,7 +39,7 @@ variance-covariance phenotypic matrix, following Benitez-Vieyra et al. (in prep)
 }
 \examples{
 A <- matrix(rnorm(100), 20, 5)
-pRV(A, vars1 = c(1:3), vars2 = c(4:5), method = "cov")
+pRV(A, vars1 = c(1:3), vars2 = c(4:5))
 }
 \author{
 Santiago Benitez-Vieyra

@@ -8,9 +8,7 @@
 #' module 1.
 #' @param vars2 Vector indicating the variables to be assigned to 
 #' module 2.
-#' @param method To estimate the RV coefficient either using a variance-covariance matrix 
-#' (\code{cov}) or a correlation matrix (\code{cor}).   
-#' @param ... Additional arguments to be passed to functions \code{cov} or \code{cor}
+#' @param ... Additional arguments to be passed to function \code{cov}.
 #' 
 #' @details The RV coefficient (Escoufier 1973, Robert and Escoufier 1978) is first 
 #' estimated using the complete sample of individuals. Then, one individual is ignored 
@@ -47,19 +45,17 @@
 #'  
 #' @examples
 #' A <- matrix(rnorm(100), 20, 5)
-#' pRV(A, vars1 = c(1:3), vars2 = c(4:5), method = "cov")
+#' pRV(A, vars1 = c(1:3), vars2 = c(4:5))
 #'  
 #' @export
 
-pRV <- function(data, vars1, vars2, method=c("cov", "cor"), ...){
-  if(method == "cov")mat<-cov(data[, c(vars1, vars2)], ...) else mat<-cor(data[, c(vars1, vars2)], ...)
+pRV <- function(data, vars1, vars2, ...){
   N <- nrow(data) 
-  Trv <- pairRV(mat = mat, vars1 = vars1, vars2 = vars2) 
-  Lrv <- numeric(N)  
+  Lrv <- numeric(N)
+  Trv <- pairRV(data = data, vars1 = vars1, vars2 = vars2, ...) 
   for(i in 1:N) {
-    if(method == "cov") Lrv[i] <- pairRV(mat = cov(data[-i, ], ...), vars1 = vars1, vars2 = vars2) #LOO RV
-    else Lrv[i] <- pairRV(mat = cor(data[-i, ], ...), vars1 = vars1, vars2 = vars2)
-  }
+    Lrv[i] <- pairRV(data[-i, ], vars1 = vars1, vars2 = vars2, ...) 
+    }
   Drv <- N*Trv - (N-1)*Lrv
   Drv  
 }

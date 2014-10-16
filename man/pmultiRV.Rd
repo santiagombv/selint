@@ -5,17 +5,14 @@
 pmultiRV estimates the individual jackknife pseudovalues of the multi-set RV coefficient
 between multiple sets of variables.}
 \usage{
-pmultiRV(data, vars, method = c("cov", "cor"), ...)
+pmultiRV(data, vars, ...)
 }
 \arguments{
 \item{data}{A data frame or matrix with two or more numeric variables}
 
 \item{vars}{A list of vectors indicating the variables to be assigned to each module.}
 
-\item{method}{To estimate the RV coefficient either using a variance-covariance matrix
-(\code{cov}) or a correlation matrix (\code{cor}).}
-
-\item{...}{Additional arguments to be passed to functions \code{cov} or \code{cor}}
+\item{...}{Additional arguments to be passed to function \code{cov}.}
 }
 \value{
 the vector of individual jackknife pseudovalues of the multi-set RV coeffcient.
@@ -42,7 +39,7 @@ variance-covariance phenotypic matrix, following Benitez-Vieyra et al. (in prep)
 }
 \examples{
 A <- matrix(rnorm(200), 20, 10)
-pmultiRV(A, vars = list(c(1:3), c(4:5), c(6:10)), method = "cov")
+pmultiRV(A, vars = list(c(1:3), c(4:5), c(6:10)))
 }
 \author{
 Santiago Benitez-Vieyra

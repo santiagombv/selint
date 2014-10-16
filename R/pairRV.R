@@ -8,6 +8,7 @@
 #' module 1.
 #' @param vars2 Vector indicating the variables to be assigned to 
 #' module 2.
+#' @param ... Additional arguments to be passed to function \code{cov}.
 #' 
 #' @details  The Escoufier's RV coefficient is deffined as
 #' 
@@ -42,11 +43,13 @@
 #'  
 #' @export
 #' 
-pairRV <-function(data, vars1, vars2){
-  mat <- cov(data[, c(vars1, vars2)])
-  S12 <- mat[vars1, vars2]
-  S11 <- mat[vars1, vars1]
-  S22 <- mat[vars2, vars2]
+pairRV <-function(data, vars1, vars2, ...){
+  mat <- cov(data[, c(vars1, vars2)], ...)
+  v1 <- seq(1, length(vars1))
+  v2 <- seq(length(vars1)+1, length(c(vars1,vars2)))
+  S12 <- mat[v1, v2]
+  S11 <- mat[v1, v1]
+  S22 <- mat[v2, v2]
   RV<-sum(S12^2)/sqrt(sum(S11^2)*sum(S22^2))
   RV
 }
