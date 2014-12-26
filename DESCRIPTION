@@ -8,3 +8,4 @@ Maintainer: Santiago Benitez-Vieyra <santiagombv@gmail.com>
 Description: selint estimates phenotypic integration indices and their
     jackknnife pseudovalues, allowing the estimation of selection coefficients.
 License: GPL-2
+LazyData: true
