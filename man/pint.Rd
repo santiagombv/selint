@@ -41,8 +41,7 @@ phenotypic selection, avoiding the calculation of the change in the full
 variance-covariance phenotypic matrix, following Benitez-Vieyra et al. (in prep).
 }
 \examples{
-A <- matrix(rnorm(100), 20, 5)
-pint(A)
+pint(sorbus[, 1:7])
 }
 \author{
 Santiago Benitez-Vieyra

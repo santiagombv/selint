@@ -34,7 +34,7 @@ variables, i.e. (N-1)/M where N is the number of traits and M is
 the sample size.
 }
 \examples{
-A <- matrix(rnorm(100), 20, 5)
+A <- sorbus[,1:7]
 intWC(A)
 }
 \references{

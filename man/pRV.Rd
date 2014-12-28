@@ -38,8 +38,7 @@ phenotypic selection, avoiding the calculation of the change in the full
 variance-covariance phenotypic matrix, following Benitez-Vieyra et al. (in prep).
 }
 \examples{
-A <- matrix(rnorm(100), 20, 5)
-pRV(A, vars1 = c(1:3), vars2 = c(4:5))
+pRV(sorbus, vars1 = c("SL", "HK"), vars2 = c("PL", "CD", "HL", "HW", "GW"))
 }
 \author{
 Santiago Benitez-Vieyra
