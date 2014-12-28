@@ -25,8 +25,7 @@
 #' 11:405-421.
 #'
 #' @examples
-#' A <- matrix(rnorm(200), 20, 10)
-#' multiRV(A, vars = list(c(1:3), c(4:5), c(6:10)))
+#' multiRV(sorbus, vars = list(c(1,2), c(3,4), c(5:7)))
 #'  
 #' @export
 #' 

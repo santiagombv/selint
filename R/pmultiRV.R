@@ -41,8 +41,7 @@
 #' Mathematical Statistics 29:614.
 #'  
 #' @examples
-#' A <- matrix(rnorm(200), 20, 10)
-#' pmultiRV(A, vars = list(c(1:3), c(4:5), c(6:10)))
+#' pmultiRV(sorbus,  vars = list(c(1,2), c(3,4), c(5:7)))
 #'  
 #' @export
 #' 

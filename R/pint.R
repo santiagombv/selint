@@ -50,8 +50,7 @@
 #' Mathematical Statistics 29:614.
 #'  
 #' @examples
-#' A <- matrix(rnorm(100), 20, 5)
-#' pint(A)
+#' pint(sorbus[, 1:7])
 #'  
 #' @export
 #' 

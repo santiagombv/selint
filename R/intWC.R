@@ -32,7 +32,7 @@
 #' Mathematical Biology 21:77-95.
 #'  
 #' @examples
-#' A <- matrix(rnorm(100), 20, 5)
+#' A <- sorbus[,1:7]
 #' intWC(A)
 #'  
 #' @export
