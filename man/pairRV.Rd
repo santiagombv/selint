@@ -38,18 +38,18 @@ The Escoufier's RV coefficient is deffined as
  are completely separated, and one, when there are no modular structure.
 }
 \examples{
-pairRV(sorbus, vars1 = c("SL", "HK"), vars2 = c("PL", "CD", "HL", "HW", "GW"))
+pairRV(sorbus, vars1 = c(3, 4), vars2 = c(1, 2, 5:7))
 }
 \references{
 Escoufier, Y. 1973. Le traitement des variables vectorielles.
-Biometrics 29:751-760.
+ Biometrics 29:751-760.
 
 Klingenberg, C.P. 2009. Morphometric integration and modularity in
-configurations of landmarks: tools for evaluating a priori hypotheses.
-Evolution and Development 11:405-421.
+ configurations of landmarks: tools for evaluating a priori hypotheses.
+ Evolution and Development 11:405-421.
 
 Robert, P., and Escoufier, Y. 1976. A unifying tool for linear
-multivariate statistical analysis: the RV-coefficient. Applied Statistics
-25:257-265.
+ multivariate statistical analysis: the RV-coefficient. Applied Statistics
+ 25:257-265.
 }
 

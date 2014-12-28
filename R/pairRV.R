@@ -10,32 +10,32 @@
 #'  
 #'@details  The Escoufier's RV coefficient is deffined as
 #'  
-#'  \deqn{RV = \frac{tr(S_{ij}S_{ji})}{\sqrt(tr(S_{i})tr(S_{j}))}}{% RV =
+#'  \deqn{RV = \frac{tr(S_{ij}S_{ji})}{\sqrt(tr(S_{i})tr(S_{j}))}}{% RV = 
 #'  tr(S_ij*S_ji)/(tr(S_i)*tr(S_j))^1/2}
 #'  
 #'  where \eqn{S_i} and \eqn{S_j} represent the variance-covariance matrices of 
 #'  the i and j set of variables (modules), \eqn{S_{ij}}{S_ij} is the covariance
 #'  matrix between these two sets (and \eqn{S_{ji}}{S_ji} is its transpose), and
 #'  \eqn{tr} is the trace of the matrices, calculated as the sum of its diagonal
-#'  elements. Therefore, RV represents the amount of covariation scaled by the
-#'  amounts of variation within two groups of variables, which is analogous to
-#'  the calculation of the (squared) correlation coefficient between two
+#'  elements. Therefore, RV represents the amount of covariation scaled by the 
+#'  amounts of variation within two groups of variables, which is analogous to 
+#'  the calculation of the (squared) correlation coefficient between two 
 #'  variables (Klingenberg 2009). RV takes values between zero, when two modules
 #'  are completely separated, and one, when there are no modular structure.
 #'  
 #'@return The Escoufier's RV coefficient.
 #'  
-#'@references Escoufier, Y. 1973. Le traitement des variables vectorielles.
-#'Biometrics 29:751-760.
+#'@references Escoufier, Y. 1973. Le traitement des variables vectorielles. 
+#'  Biometrics 29:751-760.
 #'@references Klingenberg, C.P. 2009. Morphometric integration and modularity in
-#'configurations of landmarks: tools for evaluating a priori hypotheses.
-#'Evolution and Development 11:405-421.
-#'@references Robert, P., and Escoufier, Y. 1976. A unifying tool for linear
-#'multivariate statistical analysis: the RV-coefficient. Applied Statistics
-#'25:257-265.
-#'
+#'  configurations of landmarks: tools for evaluating a priori hypotheses. 
+#'  Evolution and Development 11:405-421.
+#'@references Robert, P., and Escoufier, Y. 1976. A unifying tool for linear 
+#'  multivariate statistical analysis: the RV-coefficient. Applied Statistics 
+#'  25:257-265.
+#'  
 #'@examples
-#'pairRV(sorbus, vars1 = c("SL", "HK"), vars2 = c("PL", "CD", "HL", "HW", "GW"))
+#'pairRV(sorbus, vars1 = c(3, 4), vars2 = c(1, 2, 5:7))
 #'  
 #'@export
 #'
