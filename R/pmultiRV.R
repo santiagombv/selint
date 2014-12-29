@@ -41,7 +41,7 @@
 #' Mathematical Statistics 29:614.
 #'  
 #' @examples
-#' pmultiRV(sorbus,  vars = list(c(1,2), c(3,4), c(5:7)))
+#' pmultiRV(sorbus, vars = list(c(1,2), c(3,4), c(5:7)))
 #'  
 #' @export
 #' 
