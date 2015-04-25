@@ -53,9 +53,9 @@
 #' 
 pint <- function(data, correct = TRUE, ...){
   N <- nrow(data) 
-  Tint <- intWC(data, correct = correct, ...)
+  Tint <- intWC(data, correct = correct, type = "raw.data", ...)
   Lint <- numeric(N)  
-  for(i in 1:N) Lint[i] <- intWC(data[-i, ], ...) 
+  for(i in 1:N) Lint[i] <- intWC(data[-i, ], correct = correct, type = "raw.data", ...) 
   Dint <- N*Tint - (N-1)*Lint
   Dint  
 }
