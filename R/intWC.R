@@ -62,7 +62,7 @@ intWC <- function(data, correct = TRUE, type = c("cor", "raw.data"), ...){
         return(INT)
       }  
     } else {
-      stop("invalid 'tyep' argument")
+      stop("invalid 'type' argument")
     }
   }
 }
