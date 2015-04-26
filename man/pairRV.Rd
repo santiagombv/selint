@@ -4,7 +4,7 @@
 \alias{pairRV}
 \title{Escoufier's RV coefficient}
 \usage{
-pairRV(data, vars1, vars2, ...)
+pairRV(data, vars1, vars2, type = c("cov", "raw.data"), ...)
 }
 \arguments{
 \item{data}{A data frame or matrix with two or more numeric variables.}
@@ -12,6 +12,9 @@ pairRV(data, vars1, vars2, ...)
 \item{vars1}{Vector indicating the variables to be assigned to module 1.}
 
 \item{vars2}{Vector indicating the variables to be assigned to module 2.}
+
+\item{type}{A character string indicating if the data is data frame or matrix
+with raw data (\code{'raw.data'}) or a covariation matrix (\code{'cov'}).}
 
 \item{...}{Additional arguments to be passed to function \code{cov}.}
 }

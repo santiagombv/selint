@@ -1,11 +1,13 @@
 #' Multi-set Escoufier's RV coefficient
 #' 
-#' multiRV estimates the strength of the association between multiple sets of 
-#' variables (modules) as the average of all pair-wise RV coefficients between sets.
+#'multiRV estimates the strength of the association between multiple sets of 
+#'variables (modules) as the average of all pair-wise RV coefficients between sets.
 #' 
-#' @param data A data frame or matrix with two or more numeric variables.
-#' @param vars A list of vectors indicating the variables to be assigned to each module.
-#' @param ... Additional arguments to be passed to function \code{cov}.
+#'@param data A data frame or matrix with two or more numeric variables.
+#'@param vars A list of vectors indicating the variables to be assigned to each module.
+#'@param type A character string indicating if the data is data frame or matrix 
+#'with raw data (\code{'raw.data'}) or a covariation matrix (\code{'cov'}).
+#'@param ... Additional arguments to be passed to function \code{cov}.
 #' 
 #' @details  This function follows the suggestion of Klingenberg (2009) to estimate
 #' the strength of association among multiple sets of variables (modules), as the average 
@@ -29,8 +31,14 @@
 #'  
 #' @export
 #' 
-multiRV <- function (data, vars, ...){
-  mat <- cov(data[, unlist(vars)], ...)
+multiRV <- function (data, vars, type = c("cov", "raw.data"), ...){
+  if(type == "cov"){
+    mat <- data[, unlist(vars)]
+  } else {if(type == "raw.data"){
+    mat <- cov(data[, unlist(vars)], ...)
+    } else {stop("invalid 'type' argument")
+    }
+  }
   K <- c(1:length(vars))
   set <- t(combn(K, 2))
   rvs <- numeric(nrow(set))
