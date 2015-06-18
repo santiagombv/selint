@@ -38,11 +38,10 @@ variables, i.e. (N-1)/M where N is the number of traits and M is
 the sample size.
 }
 \examples{
-A <- sorbus[, 1:7]
-intWC(A, type = "raw.data")
+intWC(sorbus[, 1:7], type = "raw.data")
 
-B <- cor(sorbus[, 1:7])
-intWC(B, type = "cor")
+A <- cor(sorbus[, 1:7])
+intWC(A, type = "cor")
 }
 \references{
 Cheverud, J.M., Wagner, G.P., and Dow, M.M. 1989. Methods for

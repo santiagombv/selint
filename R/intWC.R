@@ -34,11 +34,10 @@
 #' Mathematical Biology 21:77-95.
 #'  
 #' @examples
-#' A <- sorbus[, 1:7]
-#' intWC(A, type = "raw.data")
+#' intWC(sorbus[, 1:7], type = "raw.data")
 #' 
-#' B <- cor(sorbus[, 1:7])
-#' intWC(B, type = "cor")
+#' A <- cor(sorbus[, 1:7])
+#' intWC(A, type = "cor")
 #'  
 #' @export
 #' 
