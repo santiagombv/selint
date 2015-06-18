@@ -4,12 +4,15 @@
 \alias{multiRV}
 \title{Multi-set Escoufier's RV coefficient}
 \usage{
-multiRV(data, vars, ...)
+multiRV(data, vars, type = c("cov", "raw.data"), ...)
 }
 \arguments{
 \item{data}{A data frame or matrix with two or more numeric variables.}
 
 \item{vars}{A list of vectors indicating the variables to be assigned to each module.}
+
+\item{type}{A character string indicating if the data is data frame or matrix
+with raw data (\code{'raw.data'}) or a covariation matrix (\code{'cov'}).}
 
 \item{...}{Additional arguments to be passed to function \code{cov}.}
 }
