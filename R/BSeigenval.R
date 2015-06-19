@@ -1,7 +1,7 @@
 #' Generation of broken-stick eigenvalue distribution
 #' 
 #' BSeigenval generates a vector of numeric values following a broken-stick 
-#' distribution, that would be used as the eigenvalues of a correlation matrix.
+#' distribution, to be used as the eigenvalues of a correlation matrix.
 #' This allows to set the integration value of the resulting matrix.  
 #' 
 #' @param INT the Wagner-Cheverud phenotypic integration index (in a 0-100 scale).
@@ -9,27 +9,31 @@
 #' @param sigma the standard deviation of a normally distributed error term, which 
 #' is added  to the eigenvalues.
 #' @param tol if one or more of the obtained eigenvalues is negative or smaller 
-#' than tol, they eare replaced by the \code{tol} value and all values are rescaled 
-#' to add the value determined by \code{dim}. This procedure (eigenvalue bending)
-#' assures that matrices with these eigenvalues were positive. 
+#' than tol, they eare replaced by the \code{tol} value and all eigenvalues are rescaled 
+#' to add the value determined by \code{dim}. This procedure assures that matrices with 
+#' these eigenvalues were positive. 
 #' 
 #' @details In a broken-stick distribution of eigenvalues, the first (leading) 
 #' eigenvalue accounts for most of the variance and the remaining eigenvalues are 
-#' equal (in the extreme case where all *r* = 1, the leading eigenvalue equals 
+#' equal (in the extreme case where all r = 1, the leading eigenvalue equals 
 #' the number of traits and the remaining eigenvalues are zero). This kind of 
-#' eigenvalue distribution corresponds to a homogeneous matrix were all *r* are 
-#' equal (Pavlicev et al. 2009) and INT is $r^{2}$. To introduce randomness around the 
+#' eigenvalue distribution corresponds to a homogeneous matrix were all r are 
+#' equal (Pavlicev et al. 2009) and INT is \eqn{r^{2}}. To introduce randomness around the 
 #' expected homogeneous matrix, we added a normally distributed error term to the 
 #' eigenvalues (with zero mean and a given standard deviation), rescaled eigenvalues
-#' to ensure they totalled *N* and eliminated negative and zero eigenvalues, if they
+#' to ensure they totalled N and eliminated negative and zero eigenvalues, if they
 #' existed. The variability of the correlation matrices is controlled by the standard
 #' deviation of the error term. This procedure avoid to simulate uniform matrices, 
 #' however, is worth to mention that when the desired integration is high, adding large
 #' error terms leads to a substantially reduction in integration.
 #'  
 #' @return a vector of positive numeric values that would be used as eigenvalues
-#' for matrix simulation
-#'  
+#' for matrix simulation.
+#'
+#' @seealso \code{\link{MODeigenval}}  
+#' 
+#' @author Santiago Benitez-Vieyra
+#'   
 #' @references
 #' Pavlicev, M., Cheverud, J.M., and Wagner, G.P. 2009. Measuring morphological 
 #' integration using eigenvalue variance. Evolutionary Biology 36(1):157-170.
