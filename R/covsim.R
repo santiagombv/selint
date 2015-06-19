@@ -18,9 +18,15 @@
 #' A <- BSeigenval(INT = 50, dim = 8, sigma = 0.1)
 #' covsim(A)
 #' 
+#' @importFrom far orthonormalization
+#' 
 #' @export
 #' 
 covsim <- function(d){
+  if (!requireNamespace("far", quietly = TRUE)) {
+    stop("far package needed for this function to work. Please install it.",
+         call. = FALSE)
+  }
   D <- diag(d)
   R <- runif(length(d), -1, 1)
   V <- orthonormalization(R, basis = T)
