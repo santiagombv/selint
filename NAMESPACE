@@ -2,9 +2,11 @@
 
 export(BSeigenval)
 export(MODeigenval)
+export(covsim)
 export(intWC)
 export(multiRV)
 export(pRV)
 export(pairRV)
 export(pint)
 export(pmultiRV)
+importFrom(far,orthonormalization)
