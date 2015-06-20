@@ -5,7 +5,9 @@ Version: 1.0
 Date: 2014-09-11
 Author: Santiago Benitez-Vieyra
 Maintainer: Santiago Benitez-Vieyra <santiagombv@gmail.com>
-Description: selint estimates phenotypic integration indices and their jackknnife pseudovalues, allowing the estimation of selection coefficients.
+Description: selint estimates phenotypic integration indices and their jackknnife
+  pseudovalues, allowing the estimation of selection coefficients. It also contains 
+  functions for the simulation of correlation matrices.
 License: GPL-2
 LazyData: true  
 Imports: far
