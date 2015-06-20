@@ -3,6 +3,7 @@
 export(BSeigenval)
 export(MODeigenval)
 export(covsim)
+export(givensrot)
 export(intWC)
 export(multiRV)
 export(pRV)
