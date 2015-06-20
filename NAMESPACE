@@ -2,7 +2,9 @@
 
 export(BSeigenval)
 export(MODeigenval)
+export(corsim)
 export(covsim)
+export(fullgivens)
 export(givensrot)
 export(intWC)
 export(multiRV)
