@@ -31,10 +31,10 @@ Santiago Benitez-Vieyra, based in the SAS routine of Wicklin (2013).
 }
 \references{
 Bendel, R.B. and Mickey, M.R. 1978. Population correlation matrices for sampling
-experiments. Communications in Statistics—Simulation and Computation 7:163–182.
+experiments. Communications in Statistics-Simulation and Computation 7:163-182.
 
 Davies, P.I. and Higham, N.J. 2000. Numerically stable generation of correlation
-matrices and their factors. BIT 40:640–651.
+matrices and their factors. BIT 40:640-651.
 
 Wicklin, R. 2013. Simulating data with SAS. Cary, NC:SAS Institute Inc.
 }
