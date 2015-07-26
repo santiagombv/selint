@@ -56,7 +56,7 @@ corsim <- function(d, order = c("none", "first", "angle")){
         a[s1] <- atan(ei[s1, 2]/ei[s1, 1])
         a[s2] <- atan(ei[s2, 2]/ei[s2, 1]) + pi
         o <- order(a)
-        B <- B[a, a]
+        B <- B[o, o]
         B
       }
     }

@@ -4,10 +4,15 @@
 \alias{corsim}
 \title{Generation of correlation matrices.}
 \usage{
-corsim(d)
+corsim(d, order = c("none", "first", "angle"))
 }
 \arguments{
 \item{d}{a numeric vector of eigenvalues.}
+
+\item{order}{A character string indicating the ordering method of the correlation
+matrix. Use \code{'none'} for the original order, \code{'first'} for the order of
+the first eigenvector or \code{'angle'} for the angular order of eigenvectors.
+with raw data (\code{'raw.data'}) or a correlation matrix (\code{'cor'}).}
 }
 \value{
 a correlation matrix.
@@ -16,15 +21,19 @@ a correlation matrix.
 \code{corsim} simulates a correlation matrix with a given set of eigenvalues.
 }
 \details{
-The function uses a vector of eigenavlues to build a covariance matrix.
+The function uses a vector of eigenvalues to build a covariance matrix.
 Then, applies a series of Givens rotations to transform the covariance matrix into
 a correlation matrix without changing the eigenvalues, following the procedure of
-Davies and Higham (2000).
+Davies and Higham (2000). The argument order allows to arrange the matrix following
+the order of the first eigenvector (best method for correlation matrices simulated
+from broken-stick eigenvalue distribution) or by the angular order of eigenvectors
+(best method for modular correlation matrices). The last method follows the procedure
+of Friendly (2002).
 }
 \examples{
 # simulation from a broken-stick distribution of eigenvalues
 e.val1 <- BSeigenval(INT = 50, dim = 6, sigma=0.1, tol = 0.0001)
-Z <- corsim(d = e.val1)
+Z <- corsim(d = e.val1, order = "none")
 Z
 
 eigen(Z)$values # check the eigenvalues
@@ -36,5 +45,8 @@ Santiago Benitez-Vieyra
 \references{
 Davies, P.I. and Higham, N.J. 2000. Numerically stable generation of correlation
 matrices and their factors. BIT 40:640-651.
+
+Friendly, M. 2002. Corrgrams. Exploratory Displays for Correlation Matrices. The
+American Statistician 56:316-324.
 }
 
