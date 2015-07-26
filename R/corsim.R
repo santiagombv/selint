@@ -15,7 +15,7 @@
 #' the order of the first eigenvector (best method for correlation matrices simulated 
 #' from broken-stick eigenvalue distribution) or by the angular order of eigenvectors
 #' (best method for modular correlation matrices). The last method follows the procedure 
-#' of Friendly (2002).
+#' of Friendly (2002), but uses absolute correlations.
 #' 
 #' @return a correlation matrix.
 #'
@@ -49,7 +49,7 @@ corsim <- function(d, order = c("none", "first", "angle")){
       B
     } else {
       if(order == "angle"){
-        ei <- eigen(B)$vectors
+        ei <- eigen(abs(B))$vectors
         s1 <- which(ei[,1]>0)
         s2 <- which(ei[,1]<0)
         a <- numeric(length=nrow(ei))
