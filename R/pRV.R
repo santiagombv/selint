@@ -49,9 +49,9 @@
 pRV <- function(data, vars1, vars2, ...){
   N <- nrow(data) 
   Lrv <- numeric(N)
-  Trv <- pairRV(data = data, vars1 = vars1, vars2 = vars2, ...) 
+  Trv <- pairRV(data = data, vars1 = vars1, vars2 = vars2, type = "raw.data", ...) 
   for(i in 1:N) {
-    Lrv[i] <- pairRV(data[-i, ], vars1 = vars1, vars2 = vars2, ...) 
+    Lrv[i] <- pairRV(data[-i, ], vars1 = vars1, vars2 = vars2, type = "raw.data", ...) 
     }
   Drv <- N*Trv - (N-1)*Lrv
   Drv  
