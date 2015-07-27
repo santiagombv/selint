@@ -37,7 +37,7 @@
 #'  25:257-265.
 #'  
 #'@examples
-#'pairRV(sorbus, vars1 = c(3, 4), vars2 = c(1, 2, 5:7))
+#'pairRV(sorbus, vars1 = c(3, 4), vars2 = c(1, 2, 5:7), type = "raw.data")
 #'  
 #'@export
 #'
